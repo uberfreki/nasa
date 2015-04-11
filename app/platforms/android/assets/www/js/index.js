@@ -1,23 +1,9 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+/* really cool something */
+
 var app = {
-    // Application Constructor
+    config: {
+        domain : 'awesome.domain'
+    },
     initialize: function() {
         this.bindEvents();
     },
@@ -26,25 +12,65 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        if(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+            // is native
+            document.addEventListener('deviceready', this.deviceReady, false);
+            document.addEventListener('pause', this.pause, false);
+            document.addEventListener('resume', this.resume, false);
+        } else {
+            document.addEventListener('DOMContentLoaded', this.browserReady, false);
+        }
     },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+    deviceReady: function() {
+        $('#take').click(function(){
+            app.takePhoto();
+        });
+        $('#choose').click(function(){
+            app.choosePhoto();
+        });
+        FastClick.attach(document.body);
     },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+    pause: function() {
+        console.log('app paused');
+    },
+    resume: function() {
+        console.log('app resumed');
+    },
+    browserReady: function() {
+        console.log('browser ready');
+        $('#take').click(function(){
+            alert('take');
+        });
+    },
+    takePhoto: function() {
+        navigator.camera.getPicture(app.addPhoto, app.errorHandler, { 
+            quality: 40,
+            destinationType: Camera.DestinationType.DATA_URL,
+            saveToPhotoAlbum: true,
+            correctOrientation: false,
+            targetWidth: 1024,
+            targetHeight: 768
+        });
+    },
+    addPhoto: function(imageData) {
+        var photo = $('<img/>').appendTo('#photos');
+        $(photo).attr('src','data:image/jpeg;base64,' + imageData);
+        $(photo).click(function(e){
+            $(this).remove();
+        });
+    },
+    removePhoto: function(e) {
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+    },
+    choosePhoto: function() {
+        navigator.camera.getPicture(app.addPhoto, app.errorHandler, { 
+            destinationType: Camera.DestinationType.DATA_URL,
+            correctOrientation: false,
+            sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+        });
+    },
+    errorHandler: function() {
+       
     }
 };
 

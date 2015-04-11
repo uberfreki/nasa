@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D2858726-2A5C-474A-8915-767C7B3DAC09</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Momently</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EA9CE4976FE82B0A297F1FE5F0BBA07B3297D90E</key>
+		<string>github.com:Createstandard/nasa.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>app/platforms/ios/Momently.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EA9CE4976FE82B0A297F1FE5F0BBA07B3297D90E</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:Createstandard/nasa.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EA9CE4976FE82B0A297F1FE5F0BBA07B3297D90E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EA9CE4976FE82B0A297F1FE5F0BBA07B3297D90E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>nasa</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -25,17 +25,41 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <link rel="stylesheet" type="text/css" href="css/ratchet.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/ratchet-theme-ios.css" />
+        <title>Upload</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+        <header class="bar bar-nav">
+            <h1 class="title">Upload</h1>
+        </header>
+        <div class="content">
+            <div class="content-padded">
+                <div class="alert">this is an alert</div>
+                <h2>Submit a thing</h2>
+                <p>Hi, welcome to submit a thing, where you can submit things all night long.</p>
+                <h4>Content</h4>
+                <input type="text" placeholder="Your full name">
+                <input type="text" placeholder="Your email address">
+                <textarea rows="5"></textarea>
+                <h4>Photos</h4>
+                <p>Add up to 5 photos, tap a photo to remove it</p>
+                <div id="photos"></div>
+                <button id="choose" class="btn btn-block">add a photo from your library</button>
+                <button id="take" class='btn btn-block'>take a photo with your camera</button>
+                <hr>
+                <button id="submit" class="btn btn-primary btn-block">submit thing</button>
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/ratchet.js"></script>
+        <script type="text/javascript" src="js/fastclick.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script> 
+        <script type="text/javascript">
+        window.onerror = function(message, url, lineNumber) {
+            console.log("Error: "+message+" in "+url+" at line "+lineNumber);
+        }
+    </script>      
     </body>
 </html>
