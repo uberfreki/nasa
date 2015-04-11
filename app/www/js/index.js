@@ -65,21 +65,36 @@ var app = {
     },
     addPhoto: function(imageData) {
         $('#take').hide();
-        $('#input').show();
         $('#photo').empty();
         var photo = $('<img/>').appendTo('#photo');
         $(photo).attr('src','data:image/jpeg;base64,' + imageData);
-        //$('#photo').empty().append(photo);
-        $(photo).click(function(e){
-            $(this).remove();
-        });
+        app.image = imageData;
+        $('#input').show();
     },
     goBack: function() {
         $('#take').show();
         $('#input').hide();
     },
-    uploadPhoto: function(e) {
-        alert('upload');
+    submit: function(e) {
+        var url = 'https://api.imgur.com/3/upload';
+        $.ajax({
+          method: "POST",
+          url: url,
+          headers: {
+            Authorization: "Client-ID 17cb7a3a2baa2df",
+          },
+          data: { 
+            image: app.image, 
+            type: "base64",
+            title: "test"
+        }
+        }).success(function( result ) {
+            var id = result.data.id;
+            window.location = 'http://i.imgur.com/' + id + '.jpg';
+        }).fail(function( result ) {
+            $('.alert').show().html(result);
+            console.log(result);
+        });
     },
     choosePhoto: function() {
         navigator.camera.getPicture(app.addPhoto, app.errorHandler, { 

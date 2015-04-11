@@ -24,7 +24,7 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/ratchet.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/ratchet.css" />
         <link rel="stylesheet" type="text/css" href="css/ratchet-theme-ios.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Momently</title>
@@ -40,8 +40,8 @@
                 <div id="take">
                     <div class="content-padded">
                     <h2>Capture a moment</h2>
-                    <a id="choose" class="btn btn-block btn-positive">add a photo from your library</a>
-                    <a id="camera" class='btn btn-block btn-primary'>take a photo with your camera</a>
+                    <a id="choose" class="btn btn-block btn-primary">add a photo from your library</a>
+                    <a id="camera" class='btn btn-block btn-positive'>take a photo with your camera</a>
                     <a id="submit" class="btn btn-primary btn-block hidden">continue</a>
                 </div>
             </div>
@@ -75,12 +75,11 @@
                       </li>
                     </ul>
                     <div class="content-padded">
-                        <a class="btn btn-block btn-positive">submit</a>
-                        <a class="btn btn-block btn-negative" onclick="app.goBack();">cancel</a>
+                        <a class="btn btn-block btn-positive" onclick="app.submit();">submit</a>
+                        <a class="btn btn-block " onclick="app.goBack();">cancel</a>
                     </div>
                 </div>
             </div>
-        </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/ratchet.js"></script>
         <script type="text/javascript" src="js/fastclick.js"></script>

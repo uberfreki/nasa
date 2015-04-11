@@ -44,6 +44,9 @@
         },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.momently"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.momently"
         }
     },
     "dependent_plugins": {}

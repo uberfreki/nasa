@@ -41,6 +41,20 @@ module.exports = [
         "clobbers": [
             "window.StatusBar"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-console/www/console-via-logger.js",
+        "id": "cordova-plugin-console.console",
+        "clobbers": [
+            "console"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-console/www/logger.js",
+        "id": "cordova-plugin-console.logger",
+        "clobbers": [
+            "cordova.logger"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -48,7 +62,8 @@ module.exports.metadata =
 {
     "cordova-plugin-camera": "1.0.0-dev",
     "cordova-plugin-device": "1.0.0-dev",
-    "cordova-plugin-statusbar": "1.0.0-dev"
+    "cordova-plugin-statusbar": "1.0.0-dev",
+    "cordova-plugin-console": "1.0.0-dev"
 }
 // BOTTOM OF METADATA
 });

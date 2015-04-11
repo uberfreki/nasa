@@ -13,7 +13,7 @@
     <preference name="stay-in-webview" value="false" />
     <preference name="WebViewBounce" value="false" />
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#FFFFFF" />
+    <preference name="StatusBarBackgroundColor" value="#333333" />
     <preference name="exit-on-suspend" value="true" />
     <preference name="BackgroundColor" value="0xff333333"/>
     <preference name="Orientation" value="portrait" />
