@@ -37,6 +37,7 @@
 /Users/robertwoodall/Documents/nasa/nasa/app/platforms/android/assets/www/index.html \
 /Users/robertwoodall/Documents/nasa/nasa/app/platforms/android/assets/www/js \
 /Users/robertwoodall/Documents/nasa/nasa/app/platforms/android/assets/www/css/index.css \
+/Users/robertwoodall/Documents/nasa/nasa/app/platforms/android/assets/www/css/index.less \
 /Users/robertwoodall/Documents/nasa/nasa/app/platforms/android/assets/www/css/ratchet-theme-android.css \
 /Users/robertwoodall/Documents/nasa/nasa/app/platforms/android/assets/www/css/ratchet-theme-android.min.css \
 /Users/robertwoodall/Documents/nasa/nasa/app/platforms/android/assets/www/css/ratchet-theme-ios.css \
@@ -48,6 +49,7 @@
 /Users/robertwoodall/Documents/nasa/nasa/app/platforms/android/assets/www/fonts/ratchicons.ttf \
 /Users/robertwoodall/Documents/nasa/nasa/app/platforms/android/assets/www/fonts/ratchicons.woff \
 /Users/robertwoodall/Documents/nasa/nasa/app/platforms/android/assets/www/img/logo.png \
+/Users/robertwoodall/Documents/nasa/nasa/app/platforms/android/assets/www/img/temp.jpg \
 /Users/robertwoodall/Documents/nasa/nasa/app/platforms/android/assets/www/js/fastclick.js \
 /Users/robertwoodall/Documents/nasa/nasa/app/platforms/android/assets/www/js/index.js \
 /Users/robertwoodall/Documents/nasa/nasa/app/platforms/android/assets/www/js/jquery.min.js \

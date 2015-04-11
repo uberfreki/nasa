@@ -11,8 +11,18 @@ body {
   /* prevent copy paste, to allow, change 'none' to 'text' */
   width: 100%;
 }
+.bar {
+  background-color: #333;
+}
+.bar .title {
+  color: white;
+}
 .hidden {
   display: none !important;
+}
+h2 {
+  text-align: center;
+  margin: 35px 45px;
 }
 img {
   max-width: 100%;

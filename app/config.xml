@@ -9,4 +9,14 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <preference name="ios-statusbarstyle" value="black-translucent" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="WebViewBounce" value="false" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#FFFFFF" />
+    <preference name="exit-on-suspend" value="true" />
+    <preference name="BackgroundColor" value="0xff333333"/>
+    <preference name="Orientation" value="portrait" />
+    <preference name="iosExtraFilesystems" value="library" />
+    <preference name="AndroidExtraFilesystems" value="files-external" />
 </widget>

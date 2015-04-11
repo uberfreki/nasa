@@ -1,6 +1,7 @@
 /* really cool something */
 
 var app = {
+    data: {},
     config: {
         domain : 'awesome.domain'
     },
@@ -34,10 +35,16 @@ var app = {
     },
     browserReady: function() {
         console.log('browser ready');
+        $('.attribute a').click(function(){
+            var label = $(this).data('label');
+            var value = $(this).data('value');
+            console.log(label + ': ' + value);
+        });
         $('#camera').click(function(){
             $('#take').hide();
             $('#input').show();
             $('#fake').show();
+            $('#photo').empty().append('<img src="img/temp.jpg"/>');
         });
     },
     pause: function() {
@@ -47,21 +54,22 @@ var app = {
         console.log('app resumed');
     },
     takePhoto: function() {
-            $('#take').hide();
-            $('#input').show();
             navigator.camera.getPicture(app.addPhoto, app.errorHandler, { 
                 quality: 40,
                 destinationType: Camera.DestinationType.DATA_URL,
                 saveToPhotoAlbum: true,
-                correctOrientation: false,
+                correctOrientation: true,
                 targetWidth: 1024,
                 targetHeight: 768
             });
     },
     addPhoto: function(imageData) {
-        var photo = $('<img/>').appendTo('#photos');
+        $('#take').hide();
+        $('#input').show();
+        $('#photo').empty();
+        var photo = $('<img/>').appendTo('#photo');
         $(photo).attr('src','data:image/jpeg;base64,' + imageData);
-        $('#photo').empty().append(photo);
+        //$('#photo').empty().append(photo);
         $(photo).click(function(e){
             $(this).remove();
         });

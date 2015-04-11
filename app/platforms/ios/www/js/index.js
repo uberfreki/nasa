@@ -1,6 +1,7 @@
 /* really cool something */
 
 var app = {
+    data: {},
     config: {
         domain : 'awesome.domain'
     },
@@ -17,12 +18,14 @@ var app = {
             document.addEventListener('deviceready', this.deviceReady, false);
             document.addEventListener('pause', this.pause, false);
             document.addEventListener('resume', this.resume, false);
+            app.isMobile = true;
         } else {
             document.addEventListener('DOMContentLoaded', this.browserReady, false);
+            app.isMobile = false;
         }
     },
     deviceReady: function() {
-        $('#take').click(function(){
+        $('#camera').click(function(){
             app.takePhoto();
         });
         $('#choose').click(function(){
@@ -30,37 +33,53 @@ var app = {
         });
         FastClick.attach(document.body);
     },
+    browserReady: function() {
+        console.log('browser ready');
+        $('.attribute a').click(function(){
+            var label = $(this).data('label');
+            var value = $(this).data('value');
+            console.log(label + ': ' + value);
+        });
+        $('#camera').click(function(){
+            $('#take').hide();
+            $('#input').show();
+            $('#fake').show();
+            $('#photo').empty().append('<img src="img/temp.jpg"/>');
+        });
+    },
     pause: function() {
         console.log('app paused');
     },
     resume: function() {
         console.log('app resumed');
     },
-    browserReady: function() {
-        console.log('browser ready');
-        $('#take').click(function(){
-            alert('take');
-        });
-    },
     takePhoto: function() {
-        navigator.camera.getPicture(app.addPhoto, app.errorHandler, { 
-            quality: 40,
-            destinationType: Camera.DestinationType.DATA_URL,
-            saveToPhotoAlbum: true,
-            correctOrientation: false,
-            targetWidth: 1024,
-            targetHeight: 768
-        });
+            navigator.camera.getPicture(app.addPhoto, app.errorHandler, { 
+                quality: 40,
+                destinationType: Camera.DestinationType.DATA_URL,
+                saveToPhotoAlbum: true,
+                correctOrientation: true,
+                targetWidth: 1024,
+                targetHeight: 768
+            });
     },
     addPhoto: function(imageData) {
-        var photo = $('<img/>').appendTo('#photos');
+        $('#take').hide();
+        $('#input').show();
+        $('#photo').empty();
+        var photo = $('<img/>').appendTo('#photo');
         $(photo).attr('src','data:image/jpeg;base64,' + imageData);
+        //$('#photo').empty().append(photo);
         $(photo).click(function(e){
             $(this).remove();
         });
     },
-    removePhoto: function(e) {
-
+    goBack: function() {
+        $('#take').show();
+        $('#input').hide();
+    },
+    uploadPhoto: function(e) {
+        alert('upload');
     },
     choosePhoto: function() {
         navigator.camera.getPicture(app.addPhoto, app.errorHandler, { 

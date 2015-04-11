@@ -24,9 +24,9 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/ratchet.min.css" />
         <link rel="stylesheet" type="text/css" href="css/ratchet-theme-ios.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Momently</title>
     </head>
     <body>
@@ -40,7 +40,6 @@
                 <div id="take">
                     <div class="content-padded">
                     <h2>Capture a moment</h2>
-                    <div id="photo"></div>
                     <a id="choose" class="btn btn-block btn-positive">add a photo from your library</a>
                     <a id="camera" class='btn btn-block btn-primary'>take a photo with your camera</a>
                     <a id="submit" class="btn btn-primary btn-block hidden">continue</a>
@@ -48,31 +47,30 @@
             </div>
                 <div id="input" style="display:none">
                     <div id="photo">
-                        <img src="img/temp.jpg" id="fake"/>
                     </div>
                     <ul class="table-view">
                       <li class="table-view-cell">
                           <h3>Clean water</h3>
                            <div class="segmented-control attribute">
-                            <a class="control-item active">yes</a>
-                            <a class="control-item">?</a>
-                            <a class="control-item">no</a>
+                            <a class="control-item" data-label="water" data-value="true">yes</a>
+                            <a class="control-item active" data-label="water" data-value="undefined">?</a>
+                            <a class="control-item" data-label="water" data-value="false">no</a>
                           </div>
                       </li>
                       <li class="table-view-cell">
                           <h3>Food</h3>
                           <div class="segmented-control attribute">
-                            <a class="control-item active">yes</a>
-                            <a class="control-item">?</a>
-                            <a class="control-item">no</a>
+                            <a class="control-item" data-label="food" data-value="true">yes</a>
+                            <a class="control-item active" data-label="food" data-value="undefined">?</a>
+                            <a class="control-item" data-label="food" data-value="false">no</a>
                           </div>
                       </li>
                       <li class="table-view-cell">
                           <h3>Shelter</h3>
                           <div class="segmented-control attribute">
-                            <a class="control-item active">yes</a>
-                            <a class="control-item">?</a>
-                            <a class="control-item">no</a>
+                            <a class="control-item" data-label="shelter" data-value="true">yes</a>
+                            <a class="control-item active" data-label="shelter" data-value="undefined">?</a>
+                            <a class="control-item" data-label="shelter" data-value="false">no</a>
                           </div>
                       </li>
                     </ul>
